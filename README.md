@@ -38,6 +38,7 @@ Browse and install all available components:
 | Command | Description |
 |---------|-------------|
 | `/addLaunch` | Create IDE launch/debug configs (VS Code, PyCharm) for ui, cmd, api, test |
+| `/commit` | Stage, review, and commit changes in one workflow |
 | `/debug` | Analyze and fix bugs in a file (default: active editor file) |
 | `/launch` | Run the app using an existing launch configuration |
 | `/retry` | Re-run the last action from the conversation |

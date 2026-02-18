@@ -6,6 +6,7 @@
 skicmd/
   dev/
     addLaunch.md
+    commit.md
     debug.md
     launch.md
     retry.md
