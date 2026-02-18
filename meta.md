@@ -9,6 +9,7 @@ skicmd/
     debug.md
     launch.md
     retry.md
+    review.md
     troubleshoot.md
   permi/
     allow.md
