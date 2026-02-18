@@ -8,9 +8,12 @@ A personal library of reusable Claude Code **hooks**, **skills**, and **commands
 
 ## Repository Layout
 
+- `meta.md` — Component registry. Lists all installable components and their paths. Fetched first by `/skicmd` to discover available components.
 - `skicmd/<category>/` — Source skill/command definitions, organized by category (e.g. `skicmd/repos/`). These are the installable components.
 - `.claude/commands/` — Repo-internal slash commands (e.g. `/skicmd` installer). Excluded from remote install listings.
 - `.claude/skills/` — Repo-internal skills. Excluded from remote install listings.
+
+When adding or removing components under `skicmd/`, keep `meta.md` in sync.
 
 ## Component Types
 

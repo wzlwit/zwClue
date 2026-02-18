@@ -1,0 +1,63 @@
+# zwClue
+
+A personal library of reusable [Claude Code](https://claude.ai/code) hooks, skills, and commands. Acts as a remote registry — components are installed into other projects via the `/skicmd` command.
+
+## Quick Start
+
+Install a specific command into your project:
+
+```
+/skicmd repos/iniGit
+```
+
+Browse and install all available components:
+
+```
+/skicmd
+```
+
+## Available Components
+
+### repos/ — Repository initialization
+
+| Command | Description |
+|---------|-------------|
+| `/iniFolder` | Scaffold standard folder structure (src, tests, config, doc, scripts, assets) |
+| `/iniGit` | Initialize git repo with .gitignore defaults and initial commit |
+| `/iniPy` | Initialize Python project with conda env, pyproject.toml, and project scaffold |
+
+### permi/ — Permission management
+
+| Command | Description |
+|---------|-------------|
+| `/allow` | Add tool/app permissions to `.claude/settings.local.json` |
+| `/deny` | Add tool/app denials to `.claude/settings.local.json` |
+
+### ui/ — UI development skills
+
+| Skill | Description |
+|-------|-------------|
+| `pyqt6/` | PyQt6 desktop app development — widget templates, dialog templates, default stylesheet |
+
+## Installing
+
+The `/skicmd` installer supports multiple modes:
+
+```
+/skicmd                              # browse all components
+/skicmd repos                        # all items in a category
+/skicmd repos/iniGit                 # a specific component
+/skicmd repos/iniGit https://...     # from a custom repo
+```
+
+Components are installed to `.claude/commands/` (project-level) or `~/.claude/commands/` (global), chosen at install time.
+
+## Component Types
+
+**Commands** — Single `.md` file with `## Instructions` for executable steps.
+
+**Skills** — Folder with `SKILL.md` plus supporting files (templates, assets). Provides ongoing guidance for development workflows.
+
+## Registry
+
+`meta.md` in the repo root serves as the component registry. The `/skicmd` installer fetches it first to discover available components and construct precise download URLs without querying the full GitHub API tree.
