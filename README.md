@@ -33,6 +33,16 @@ Browse and install all available components:
 | `/allow` | Add tool/app permissions to `.claude/settings.local.json` |
 | `/deny` | Add tool/app denials to `.claude/settings.local.json` |
 
+### dev/ — Development tools
+
+| Command | Description |
+|---------|-------------|
+| `/addLaunch` | Create IDE launch/debug configs (VS Code, PyCharm) for ui, cmd, api, test |
+| `/debug` | Analyze and fix bugs in a file (default: active editor file) |
+| `/launch` | Run the app using an existing launch configuration |
+| `/retry` | Re-run the last action from the conversation |
+| `/troubleshoot` | Diagnose and fix errors from recent conversation actions |
+
 ### ui/ — UI development skills
 
 | Skill | Description |
