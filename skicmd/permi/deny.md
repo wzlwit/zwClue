@@ -10,7 +10,7 @@ Adds a tool/app denial to `.claude/settings.local.json` in the current project.
 ## Usage
 
 ```
-/deny rm                    # adds Bash(rm:*), Read(rm:*), Edit(rm:*), Write(rm:*)
+/deny rm                    # adds Bash(rm:*), PowerShell(rm:*), Read(rm:*), Edit(rm:*), Write(rm:*)
 /deny docker Bash           # adds only Bash(docker:*)
 ```
 
@@ -18,7 +18,7 @@ Adds a tool/app denial to `.claude/settings.local.json` in the current project.
 
 1. Parse $1 from the user's input. If missing, ask the user which tool to deny.
 
-2. Parse $2 from the user's input. If missing, apply to all tool types: `Bash`, `Read`, `Edit`, `Write`.
+2. Parse $2 from the user's input. If missing, apply to all tool types: `Bash`, `PowerShell`, `Read`, `Edit`, `Write`.
 
 3. Read `.claude/settings.local.json` in the current working directory. If it doesn't exist, create it with this structure:
    ```json
@@ -31,7 +31,7 @@ Adds a tool/app denial to `.claude/settings.local.json` in the current project.
 
 4. Construct the permission entries:
    - If $2 is provided: single entry `{$2}({$1}:*)`. Proceed to step 6.
-   - If $2 is omitted: one entry per tool type — `Bash({$1}:*)`, `Read({$1}:*)`, `Edit({$1}:*)`, `Write({$1}:*)`.
+   - If $2 is omitted: one entry per tool type — `Bash({$1}:*)`, `PowerShell({$1}:*)`, `Read({$1}:*)`, `Edit({$1}:*)`, `Write({$1}:*)`.
 
 5. If $2 was omitted (all tool types), show the list of entries that will be added and ask the user to confirm before proceeding.
 
