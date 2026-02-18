@@ -33,6 +33,15 @@ src/
 - `dialogs/` — Reusable dialog templates
 - `resources/` — Default stylesheets, icons, and other assets
 
+## User Settings Persistence
+
+- Use `QSettings` to save and restore user input across sessions
+- Initialize in `main.py`: `QSettings(QSettings.Format.IniFormat, QSettings.Scope.UserScope, "{app_name}", "{app_name}")`
+- Save values with `settings.setValue("key", value)`
+- Restore values with `settings.value("key", defaultValue)`
+- Common use cases: window size/position, last-used form inputs, user preferences
+- Call `settings.sync()` to ensure writes are flushed
+
 ## Stylesheets
 
 - Use `.qss` files in `src/resources/` for styling
