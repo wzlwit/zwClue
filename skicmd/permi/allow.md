@@ -4,14 +4,16 @@ Adds a tool/app permission to `.claude/settings.local.json` in the current proje
 
 ## Parameters
 
-- **$1** (required): The app or tool name to allow (e.g. `git`, `npm`, `docker`)
+- **$1** (required): Tool name (e.g. `git`) or path/wildcard pattern (e.g. `~/.claude/commands/*`)
 - **$2** (optional): Specific tool type to scope the permission to (e.g. `Bash`, `Read`, `Edit`). If omitted, allows across all tool types.
 
 ## Usage
 
 ```
-/allow git                  # adds Bash(git:*), PowerShell(git:*), Read(git:*), Edit(git:*), Write(git:*)
-/allow npm Bash             # adds only Bash(npm:*)
+/allow git                          # adds Bash(git:*), PowerShell(git:*), Read(git:*), Edit(git:*), Write(git:*)
+/allow npm Bash                     # adds only Bash(npm:*)
+/allow ~/.claude/commands/* Bash    # adds Bash(~/.claude/commands/*)
+/allow ~/.claude/commands/*         # adds for all tool types with wildcard path
 ```
 
 ## Instructions
@@ -29,14 +31,18 @@ Adds a tool/app permission to `.claude/settings.local.json` in the current proje
    }
    ```
 
-4. Construct the permission entries:
-   - If $2 is provided: single entry `{$2}({$1}:*)`. Proceed to step 6.
-   - If $2 is omitted: one entry per tool type — `Bash({$1}:*)`, `PowerShell({$1}:*)`, `Read({$1}:*)`, `Edit({$1}:*)`, `Write({$1}:*)`.
+4. Determine if $1 is a **path/wildcard** (contains `/` or `*`) or a **simple tool name**:
+   - **Path/wildcard**: use pattern as-is → `{$2}({$1})`
+   - **Simple name**: append `:*` → `{$2}({$1}:*)`
 
-5. If $2 was omitted (all tool types), show the list of entries that will be added and ask the user to confirm before proceeding.
+5. Construct the permission entries:
+   - If $2 is provided: single entry. Proceed to step 7.
+   - If $2 is omitted: one entry per tool type (`Bash`, `PowerShell`, `Read`, `Edit`, `Write`).
 
-6. Skip any entries that already exist in the `allow` array.
+6. If $2 was omitted (all tool types), show the list of entries that will be added and ask the user to confirm before proceeding.
 
-7. Add the new entries to the `permissions.allow` array and write the file.
+7. Skip any entries that already exist in the `allow` array.
 
-8. Confirm what was added and show the updated allow list.
+8. Add the new entries to the `permissions.allow` array and write the file.
+
+9. Confirm what was added and show the updated allow list.
