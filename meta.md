@@ -9,6 +9,7 @@ skicmd/
     commit.md
     debug.md
     launch.md
+    push.md
     retry.md
     review.md
     troubleshoot.md

@@ -41,6 +41,7 @@ Browse and install all available components:
 | `/commit` | Stage, review, and commit changes in one workflow |
 | `/debug` | Analyze and fix bugs in a file (default: active editor file) |
 | `/launch` | Run the app using an existing launch configuration |
+| `/push` | Push commits to remote with optional remote and branch |
 | `/retry` | Re-run the last action from the conversation |
 | `/review` | Review code changes before committing |
 | `/troubleshoot` | Diagnose and fix errors from recent conversation actions |
