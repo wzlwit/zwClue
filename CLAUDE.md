@@ -4,17 +4,30 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Purpose
 
-This repository is a collection of reusable Claude Code **hooks** and **skills/commands** (skicmd). It serves as a personal library of automation tools that can be referenced across projects.
+A personal library of reusable Claude Code **hooks**, **skills**, and **commands**. The repo acts as a remote registry — components are installed into other projects via the `/skicmd` command.
 
-## Repository Structure
+## Repository Layout
 
-- `skicmd/` — Skills/commands, organized by category in subdirectories
-  - `repos/` — Repository initialization and scaffolding commands
+- `skicmd/<category>/` — Source skill/command definitions, organized by category (e.g. `skicmd/repos/`)
+- `.claude/commands/` — Installable Claude Code slash commands (e.g. `/skicmd`)
+- `.claude/skills/` — Installable Claude Code skills
 
-## Skills/Commands Convention
+## Skill/Command File Format
 
-Each skill is a single Markdown file under `skicmd/<category>/`. The file format:
+Each component is a single Markdown file. The format:
 
-- Filename becomes the command name (e.g., `iniGit.md` → `/iniGit`)
-- Contains a heading with the command name, a description, and an `## Instructions` section with the steps Claude should execute
-- Instructions should be self-contained and executable without external context
+- Filename becomes the command name (e.g. `iniGit.md` → `/iniGit`)
+- Starts with `# /commandName` heading
+- Includes `## Instructions` section with self-contained, executable steps
+- Parameters are documented with `$1`, `$2` notation
+
+## Installing Components
+
+Run `/skicmd` (defined in `.claude/commands/skicmd.md`) to download and install components from this repo into a target project. Default source: `https://github.com/wzlwit/zwClue`.
+
+- `/skicmd` — browse and install all components from the repo
+- `/skicmd repos` or `/skicmd repos/` — install all items in a category folder
+- `/skicmd repos/iniGit` — install a specific component
+- `/skicmd repos/iniGit https://github.com/user/repo` — install from a custom repo
+
+Components are installed to `.claude/commands/` (project) or `~/.claude/commands/` (global), chosen at install time.
