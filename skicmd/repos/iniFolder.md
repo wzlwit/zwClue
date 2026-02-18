@@ -32,4 +32,8 @@ Create the following folder structure in the current working directory:
 - `scripts/` — build, deploy, and utility scripts
 - `assets/` — static assets (images, fonts, etc.)
 
-Use `mkdir -p` to create all directories. Add a `.gitkeep` file in each leaf directory so git tracks them. Report what was created when done.
+Use `mkdir -p` to create all directories. Add a `.gitkeep` file in each leaf directory so git tracks them.
+
+Create a `README.md` with the project name (current directory name) as the heading.
+
+Report what was created when done.
