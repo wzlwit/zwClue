@@ -32,6 +32,7 @@ Adds a tool/app denial to `.claude/settings.local.json` in the current project.
    ```
 
 4. Determine if $1 is a **path/wildcard** (contains `/` or `*`) or a **simple tool name**:
+   - **Path/wildcard**: verify the path or parent directory exists (expand `~` first). For wildcards, check that the directory portion exists (e.g. `~/.claude/commands/` for `~/.claude/commands/*`). If it doesn't exist, warn the user and ask to proceed or abort.
    - **Path/wildcard**: use pattern as-is → `{$2}({$1})`
    - **Simple name**: append `:*` → `{$2}({$1}:*)`
 
