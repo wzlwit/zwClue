@@ -8,9 +8,9 @@ A personal library of reusable Claude Code **hooks**, **skills**, and **commands
 
 ## Repository Layout
 
-- `skicmd/<category>/` — Source skill/command definitions, organized by category (e.g. `skicmd/repos/`)
-- `.claude/commands/` — Installable Claude Code slash commands (e.g. `/skicmd`)
-- `.claude/skills/` — Installable Claude Code skills
+- `skicmd/<category>/` — Source skill/command definitions, organized by category (e.g. `skicmd/repos/`). These are the installable components.
+- `.claude/commands/` — Repo-internal slash commands (e.g. `/skicmd` installer). Excluded from remote install listings.
+- `.claude/skills/` — Repo-internal skills. Excluded from remote install listings.
 
 ## Skill/Command File Format
 

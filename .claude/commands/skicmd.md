@@ -25,7 +25,7 @@ Downloads and installs skills/commands/hooks from a remote GitHub repository.
 
 2. **If $1 is missing** — install all components:
    a. Use `gh api repos/{owner}/{repo}/git/trees/main?recursive=1` to get the full file tree.
-   b. Filter the tree for `.md` files under `skicmd/` (skills/commands) and `hooks/` (hooks).
+   b. Filter the tree for `.md` files under `skicmd/` (skills/commands) and `hooks/` (hooks). Exclude `.claude/` — those are internal to this repo only.
    c. Present the user with a list of all available components grouped by type.
    d. Ask the user which components to install — all of them, or let them pick specific ones.
    e. For each selected component, proceed with steps 4–10 below.
