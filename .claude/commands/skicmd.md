@@ -58,3 +58,5 @@ Downloads and installs skills/commands/hooks from a remote GitHub repository.
 10. If a file already exists at the target path, warn the user and ask for confirmation before overwriting.
 
 11. Create the target directory if needed (`mkdir -p`), write the file, and confirm the installed path.
+
+12. **Check for duplicates**: After installation, check if a component with the same name exists in both project (`.claude/commands/` or `.claude/hooks/`) and global (`~/.claude/commands/` or `~/.claude/hooks/`) locations. If a duplicate is found, warn the user and ask if they want to remove the other copy to avoid conflicts.
