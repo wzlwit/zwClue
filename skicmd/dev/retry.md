@@ -1,25 +1,37 @@
 # /retry
 
-Re-runs the last action or command that was executed in the current conversation.
+Lists recent actions from the conversation and re-tries the latest failed one, or a selected action.
 
 ## Parameters
 
-None.
+- **$1** (optional): Action number from the list to retry. If omitted, auto-retry the latest action with an error after 10 seconds.
 
 ## Usage
 
 ```
-/retry
+/retry                   # list actions, auto-retry latest error after 10s
+/retry 3                 # retry action #3 from the list
 ```
 
 ## Instructions
 
-1. Look back in the current conversation to identify the most recent action taken (e.g. a command execution, file edit, file creation, tool call, or code run).
+1. Scan the current conversation and compile a numbered list of recent actions taken (commands, file edits, file creations, tool calls, code runs). For each action show:
+   - **#** — action number
+   - **Title** — short description of the action (e.g. "Write src/main.py", "Run pytest")
+   - **Status** — success or failed
+   - **Error** — if failed, show error keywords or first line of the error message
 
-2. If the last action failed, re-run it exactly as before.
+2. Present the list to the user.
 
-3. If the last action succeeded but produced unexpected results, re-run it and compare the output.
+3. **If $1 is provided**: retry the specified action by number.
 
-4. If the last action was a multi-step operation, re-run the entire sequence from the first step.
+4. **If $1 is omitted**: identify the most recent action with an error. If found:
+   - Inform the user it will auto-retry in 10 seconds.
+   - Wait 10 seconds, then re-run the failed action.
+   - If no errors found, inform the user all actions succeeded and stop.
 
-5. Report the result and whether it differs from the previous attempt.
+5. Re-run the selected action exactly as before.
+
+6. If the action was a multi-step operation, re-run the entire sequence.
+
+7. Report the result, whether it succeeded or failed again, and any differences from the previous attempt.
