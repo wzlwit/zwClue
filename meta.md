@@ -4,6 +4,9 @@
 
 ```
 skicmd/
+  dev/
+    addLaunch.md
+    launch.md
   permi/
     allow.md
     deny.md
