@@ -17,6 +17,27 @@ Downloads and installs skills/commands/hooks from a remote GitHub repository.
 /skicmd repos/iniGit https://github.com/user/repo   # from a custom repo
 ```
 
+## Repository Structure
+
+```
+skicmd/
+  permi/
+    allow.md                        # /allow command
+    deny.md                         # /deny command
+  repos/
+    iniFolder.md                    # /iniFolder command
+    iniGit.md                       # /iniGit command
+    iniPy.md                        # /iniPy command
+  ui/
+    pyqt6/                          # PyQt6 skill (folder)
+      SKILL.md
+      widgets/custom_widget.md
+      dialogs/custom_dialog.md
+      resources/style.qss
+```
+
+When using the default repo URL, use this structure to construct precise download URLs instead of querying the GitHub API tree.
+
 ## Instructions
 
 1. Parse the arguments from the user's input:
@@ -24,17 +45,15 @@ Downloads and installs skills/commands/hooks from a remote GitHub repository.
    - Second argument (optional): GitHub repo URL. Default: `https://github.com/wzlwit/zwClue`.
 
 2. **If $1 is missing** — install all components:
-   a. Use `gh api repos/{owner}/{repo}/git/trees/main?recursive=1` to get the full file tree.
-   b. Filter the tree for `.md` files under `skicmd/` (skills/commands) and `hooks/` (hooks). Exclude `.claude/` — those are internal to this repo only.
-   c. Present the user with a list of all available components grouped by type.
-   d. Ask the user which components to install — all of them, or let them pick specific ones.
-   e. For each selected component, proceed with steps 4–10 below.
+   a. If using the default repo URL, use the Repository Structure above to list all available components. Otherwise, use `gh api repos/{owner}/{repo}/git/trees/main?recursive=1` to get the file tree and filter for files under `skicmd/` and `hooks/` (exclude `.claude/`).
+   b. Present the user with a list of all available components grouped by category.
+   c. Ask the user which components to install — all of them, or let them pick specific ones.
+   d. For each selected component, proceed with steps 4–10 below.
 
 3. **If $1 is a folder only** (no `/name` segment, or ends with `/`, e.g. `repos` or `repos/`) — install all items in that folder:
-   a. Use `gh api repos/{owner}/{repo}/git/trees/main?recursive=1` to get the file tree.
-   b. Filter for `.md` files under `skicmd/{folder}/`.
-   c. Present the list and ask the user which to install — all or pick specific ones.
-   d. For each selected component, proceed with steps 4–10 below.
+   a. If using the default repo URL, use the Repository Structure above to list items in that folder. Otherwise, use `gh api repos/{owner}/{repo}/git/trees/main?recursive=1` and filter for files under `skicmd/{folder}/`.
+   b. Present the list and ask the user which to install — all or pick specific ones.
+   c. For each selected component, proceed with steps 4–10 below.
 
 4. **If $1 is `folder/name`** — install a specific component:
    - Extract the **name** (last segment) from the path. Example: `repos/iniGit` → name is `iniGit`.
