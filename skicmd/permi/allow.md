@@ -18,7 +18,7 @@ Adds a tool/app permission to `.claude/settings.local.json` in the current proje
 
 ## Instructions
 
-1. Parse $1 from the user's input. If missing, ask the user which tool to allow.
+1. Parse $1 from the user's input. If missing, default to allowing: `git`, `pip`, `python`, `gh`. Show the list and ask the user to confirm before proceeding.
 
 2. Parse $2 from the user's input. If missing, apply to all tool types: `Bash`, `PowerShell`, `Read`, `Edit`, `Write`.
 
@@ -45,4 +45,9 @@ Adds a tool/app permission to `.claude/settings.local.json` in the current proje
 
 8. Add the new entries to the `permissions.allow` array and write the file.
 
-9. Confirm what was added and show the updated allow list.
+9. **Post-install cleanup**: Review the full settings file for:
+   - **Duplicates**: Remove any duplicate entries within the `allow` array.
+   - **Conflicts**: If the same pattern exists in both `allow` and `deny`, warn the user and ask which to keep.
+   - **Redundancies**: If a wildcard entry (e.g. `Bash(git:*)`) covers a more specific entry (e.g. `Bash(git commit:*)`), prompt to remove the specific one.
+
+10. Confirm what was added and show the updated allow list.

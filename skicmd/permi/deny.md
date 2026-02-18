@@ -45,4 +45,9 @@ Adds a tool/app denial to `.claude/settings.local.json` in the current project.
 
 8. Add the new entries to the `permissions.deny` array and write the file.
 
-9. Confirm what was added and show the updated deny list.
+9. **Post-install cleanup**: Review the full settings file for:
+   - **Duplicates**: Remove any duplicate entries within the `deny` array.
+   - **Conflicts**: If the same pattern exists in both `allow` and `deny`, warn the user and ask which to keep.
+   - **Redundancies**: If a wildcard entry (e.g. `Bash(rm:*)`) covers a more specific entry (e.g. `Bash(rm -rf:*)`), prompt to remove the specific one.
+
+10. Confirm what was added and show the updated deny list.
