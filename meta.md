@@ -6,7 +6,10 @@
 skicmd/
   dev/
     addLaunch.md
+    debug.md
     launch.md
+    retry.md
+    troubleshoot.md
   permi/
     allow.md
     deny.md
