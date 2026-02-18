@@ -4,7 +4,8 @@ Skill for building PyQt6 desktop applications. Use this when adding UI component
 
 ## Setup
 
-Ensure PyQt6 is installed in the active conda environment: `pip install PyQt6`.
+1. Install PyQt6 in the active conda environment: `pip install PyQt6`
+2. Add `PyQt6` to `requirements.txt` if not already listed
 
 ## Project Structure
 
