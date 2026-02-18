@@ -9,7 +9,7 @@ Lists recent actions from the conversation and re-tries the latest failed one, o
 ## Usage
 
 ```
-/retry                   # list actions, auto-retry latest error after 10s
+/retry                   # list actions, pick one or auto-retry latest error after 60s
 /retry 3                 # retry action #3 from the list
 ```
 
@@ -23,12 +23,9 @@ Lists recent actions from the conversation and re-tries the latest failed one, o
 
 2. Present the list to the user.
 
-3. **If $1 is provided**: retry the specified action by number.
+3. **If $1 is provided**: retry the specified action by number immediately.
 
-4. **If $1 is omitted**: identify the most recent action with an error. If found:
-   - Inform the user it will auto-retry in 10 seconds.
-   - Wait 10 seconds, then re-run the failed action.
-   - If no errors found, inform the user all actions succeeded and stop.
+4. **If $1 is omitted**: ask the user to select an action to retry. If no selection is made within 60 seconds, automatically retry the most recent action with an error.
 
 5. Re-run the selected action exactly as before.
 
