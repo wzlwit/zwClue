@@ -4,20 +4,20 @@ Creates a pull request on GitHub.
 
 ## Parameters
 
-- **$1** (optional): Target/base branch. Default: `main`.
+- **$1** (optional): Target/base branch. Default: current branch.
 - **$2** (optional): PR title. If omitted, auto-generate from commits.
 
 ## Usage
 
 ```
-/pr                          # PR to main, auto-generate title
+/pr                          # PR from current branch, auto-generate title
 /pr develop                  # PR to develop branch
 /pr main "Add login feature" # PR to main with custom title
 ```
 
 ## Instructions
 
-1. Parse $1 (base branch) and $2 (title) from the user's input. Default base branch to `main`.
+1. Parse $1 (base branch) and $2 (title) from the user's input. Default base branch to the current branch (`git branch --show-current`).
 
 2. Get the current branch name with `git branch --show-current`. If on the base branch, warn the user and stop.
 
