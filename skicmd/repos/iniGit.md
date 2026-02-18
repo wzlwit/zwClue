@@ -48,7 +48,7 @@ Run `/iniGit` in any project root to initialize a git repo with sensible default
 1. Run `git init` in the current working directory
 2. Create a `.gitignore` file with the defaults listed above
 3. Create a `README.md` with the project name (current directory name) as the heading
-4. Stage all files with `git add -A`
+4. Stage all files with `git add -A`, but exclude `.claude/commands/skicmd.md` from the initial commit (it is installed separately via `/skicmd`)
 5. Create an initial commit with message: `Initial commit`
 
 If git is already initialized (`.git/` exists), warn the user and do nothing.
