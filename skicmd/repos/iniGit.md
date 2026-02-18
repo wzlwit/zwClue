@@ -54,4 +54,8 @@ Run `/iniGit` in any project root to initialize a git repo with sensible default
 4. Stage all files with `git add -A`
 5. Create an initial commit with message: `Initial commit`
 
-If git is already initialized (`.git/` exists), warn the user and do nothing.
+If git is already initialized (`.git/` exists):
+1. Compare the existing `.gitignore` with the defaults above and list any missing entries.
+2. Check if `README.md` exists.
+3. Present the user with a list of updates available (missing .gitignore entries, missing README, etc.) and let them select which to apply.
+4. If nothing needs updating, inform the user and stop.
