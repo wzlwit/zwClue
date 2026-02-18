@@ -12,14 +12,18 @@ A personal library of reusable Claude Code **hooks**, **skills**, and **commands
 - `.claude/commands/` — Repo-internal slash commands (e.g. `/skicmd` installer). Excluded from remote install listings.
 - `.claude/skills/` — Repo-internal skills. Excluded from remote install listings.
 
-## Skill/Command File Format
+## Component Types
 
-Each component is a single Markdown file. The format:
-
+**Commands** (single file): A `.md` file directly in a category folder.
 - Filename becomes the command name (e.g. `iniGit.md` → `/iniGit`)
 - Starts with `# /commandName` heading
 - Includes `## Instructions` section with self-contained, executable steps
 - Parameters are documented with `$1`, `$2` notation
+
+**Skills** (folder): A subfolder containing `SKILL.md` plus supporting files (templates, assets, etc.).
+- `SKILL.md` defines conventions and guidance for ongoing development
+- Subfolders hold reusable templates, stylesheets, and other assets
+- Example: `skicmd/ui/pyqt6/` with `SKILL.md`, `widgets/`, `dialogs/`, `resources/`
 
 ## Installing Components
 
