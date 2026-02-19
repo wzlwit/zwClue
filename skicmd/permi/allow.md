@@ -18,7 +18,7 @@ Adds a tool/app permission to `.claude/settings.local.json` in the current proje
 
 ## Instructions
 
-1. Parse $1 from the user's input. If missing, default to allowing: `git`, `pip`, `python`, `gh`. Show the list and ask the user to confirm before proceeding.
+1. Parse $1 from the user's input. If missing, default to allowing: `git`, `pip`, `python`, `gh`, `{pwd}` (current working directory path). Show the list and ask the user to confirm before proceeding.
 
 2. Parse $2 from the user's input. If missing, apply to all tool types: `Bash`, `PowerShell`, `Read`, `Edit`, `Write`.
 
