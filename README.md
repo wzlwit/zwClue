@@ -45,6 +45,7 @@ Browse and install all available components:
 | `/env` | Manage environments (create, activate, remove, list, info) |
 | `/iniClaude` | Generate CLAUDE.md for root, each subfolder, or all |
 | `/launch` | Run the app using an existing launch configuration |
+| `/listSC` | List all installed custom commands and skills |
 | `/kickoff` | Implement code from an existing plan file |
 | `/planOn` | Generate implementation plan from a requirements file |
 | `/pr` | Create a pull request on GitHub |

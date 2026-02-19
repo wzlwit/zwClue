@@ -13,6 +13,7 @@ skicmd/
     env.md
     iniClaude.md
     launch.md
+    listSC.md
     kickoff.md
     planOn.md
     pr.md
