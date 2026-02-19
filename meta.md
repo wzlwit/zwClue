@@ -8,6 +8,7 @@ skicmd/
     addLaunch.md
     commit.md
     debug.md
+    dep.md
     launch.md
     kickoff.md
     planOn.md

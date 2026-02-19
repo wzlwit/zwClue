@@ -40,6 +40,7 @@ Browse and install all available components:
 | `/addLaunch` | Create IDE launch/debug configs (VS Code, PyCharm) for ui, cmd, api, test |
 | `/commit` | Stage, review, and commit changes in one workflow |
 | `/debug` | Analyze and fix bugs in a file (default: active editor file) |
+| `/dep` | Manage dependencies and environment (add, remove, sync, check) |
 | `/launch` | Run the app using an existing launch configuration |
 | `/kickoff` | Implement code from an existing plan file |
 | `/planOn` | Generate implementation plan from a requirements file |
