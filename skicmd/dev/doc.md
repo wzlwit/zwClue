@@ -30,16 +30,19 @@ Generates documentation for the current project.
    **File path** (e.g. `src/main.py`) — document a single file:
    - Read the file and analyze classes, functions, and module structure.
    - Generate a markdown doc with: module overview, class/function signatures, parameters, return types, and usage examples.
+   - If `{$2}/{filename}.md` already exists, show what changed and ask to overwrite or merge.
    - Save to `{$2}/{filename}.md`.
 
    **Folder** (e.g. `src/`) — document all files in the folder:
    - Scan for source files recursively.
    - Generate a doc per file plus an index page linking them all.
+   - For existing docs, show what changed and ask to overwrite or merge.
    - Save to `{$2}/`.
 
    **api** — generate API documentation:
    - Scan `src/` for classes, public methods, endpoints, and interfaces.
    - Generate structured API reference with signatures, parameters, and return types.
+   - If `{$2}/api.md` already exists, show what changed and ask to overwrite or merge.
    - Save to `{$2}/api.md`.
 
    **readme** — generate or update `README.md`:
@@ -47,10 +50,11 @@ Generates documentation for the current project.
    - Generate/update README with: project description, setup instructions, usage, and project structure.
    - Save to `./README.md` (project root).
 
-   **changelog** — generate `CHANGELOG.md` from git history:
+   **changelog** — generate or update `CHANGELOG.md` from git history:
    - Run `git log --oneline --no-merges` to get commit history.
    - Group commits by date or tag.
    - Generate a changelog in Keep a Changelog format.
+   - If `./CHANGELOG.md` already exists, append new entries since last documented date/tag.
    - Save to `./CHANGELOG.md` (project root).
 
    **all** — generate everything:
