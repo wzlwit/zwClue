@@ -41,6 +41,7 @@ Browse and install all available components:
 | `/commit` | Stage, review, and commit changes in one workflow |
 | `/debug` | Analyze and fix bugs in a file (default: active editor file) |
 | `/dep` | Manage dependencies and environment (add, remove, sync, check) |
+| `/doc` | Generate documentation (api, readme, changelog, file, folder) |
 | `/env` | Manage environments (create, activate, remove, list, info) |
 | `/launch` | Run the app using an existing launch configuration |
 | `/kickoff` | Implement code from an existing plan file |
