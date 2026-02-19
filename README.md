@@ -47,6 +47,7 @@ Browse and install all available components:
 | `/push` | Push commits to remote with optional remote and branch |
 | `/retry` | Re-run the last action from the conversation |
 | `/review` | Review code changes before committing |
+| `/test` | Run tests with auto-detected framework |
 | `/troubleshoot` | Diagnose and fix errors from recent conversation actions |
 
 ### ui/ — UI development skills

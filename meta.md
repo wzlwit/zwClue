@@ -14,6 +14,7 @@ skicmd/
     pr.md
     push.md
     retry.md
+    test.md
     review.md
     troubleshoot.md
   permi/
