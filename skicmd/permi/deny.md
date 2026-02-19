@@ -18,7 +18,9 @@ Adds a tool/app denial to `.claude/settings.local.json` in the current project.
 
 ## Instructions
 
-1. Parse $1 from the user's input. If missing, ask the user which tool to deny.
+1. Parse $1 from the user's input. If missing, run the **default** flow:
+   - Clean the existing `permissions.deny` array: remove duplicates, remove entries covered by broader wildcards, and compact similar entries into wildcards where possible.
+   - Show the cleaned list and ask the user to confirm before saving.
 
 2. Parse $2 from the user's input. If missing, apply to all tool types: `Bash`, `PowerShell`, `Read`, `Edit`, `Write`.
 
