@@ -47,6 +47,7 @@ Browse and install all available components:
 | `/launch` | Run the app using an existing launch configuration |
 | `/listSC` | List all installed custom commands and skills |
 | `/kickoff` | Implement code from an existing plan file |
+| `/optimize` | Analyze and generate optimization plan for project or scope |
 | `/planOn` | Generate implementation plan from a requirements file |
 | `/pr` | Create a pull request on GitHub |
 | `/push` | Push commits to remote with optional remote and branch |

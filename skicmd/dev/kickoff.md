@@ -34,15 +34,17 @@ Implements code from an existing plan file.
    - Key logic or dependencies
    - Order and dependencies on other steps
 
-6. Present the implementation steps to the user as a numbered checklist. Ask the user to confirm:
-   - **All** — implement all steps in order
-   - **Select** — pick specific steps to implement
-   - **Cancel** — abort
+6. Present the implementation steps to the user as a numbered checklist. Prompt the user to choose a mode (auto-select after 60 seconds):
+   - **Auto** (default) — implement all steps without pausing. Fastest execution.
+   - **Step-by-step** — confirm each step before proceeding. Pause after each step for user to approve or skip, then continue.
+   - **Review** — show the diff/changes for each step before applying. User confirms or rejects each change, then continue to the next step.
 
 7. For each approved step, prefix the prompt with the think level keyword and use the specified model to:
    a. Create or modify the files as described in the plan.
    b. Follow existing code conventions and patterns in the project.
-   c. Mark the step as done after completion.
+   c. In **Step-by-step** mode: show what will be done and wait for confirmation before executing.
+   d. In **Review** mode: generate the changes, show the diff, and wait for user to accept or reject before writing.
+   e. Mark the step as done after completion.
 
 8. After each step, run any relevant tests or validation if described in the plan's testing strategy.
 
