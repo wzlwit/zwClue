@@ -16,6 +16,7 @@ skicmd/
     listSC.md
     kickoff.md
     optimize.md
+    refactor.md
     planOn.md
     pr.md
     push.md
