@@ -9,6 +9,7 @@ skicmd/
     commit.md
     debug.md
     dep.md
+    env.md
     launch.md
     kickoff.md
     planOn.md
