@@ -4,13 +4,13 @@ Manages project dependencies and environment.
 
 ## Parameters
 
-- **$1** (optional): Action — `add`, `remove`, `list`, `sync`, `check`. Default: `list`.
+- **$1** (optional): Action — `add`, `remove`, `list`, `sync`, `check`. Default: `sync`.
 - **$2** (optional): Package name(s) for `add`/`remove`. Multiple packages separated by spaces.
 
 ## Usage
 
 ```
-/dep                             # list all installed dependencies
+/dep                             # sync dependencies from requirements file
 /dep add requests flask          # add packages
 /dep remove flask                # remove a package
 /dep sync                        # install all from requirements file
@@ -19,7 +19,7 @@ Manages project dependencies and environment.
 
 ## Instructions
 
-1. Parse $1 (action) and $2 (packages) from the user's input. Default action: `list`.
+1. Parse $1 (action) and $2 (packages) from the user's input. Default action: `sync`.
 
 2. **Detect the environment and package manager**:
    - Check for active conda env: `conda info --envs` — identify the active one.
@@ -49,6 +49,9 @@ Manages project dependencies and environment.
    - Confirm what was removed.
 
    **sync** — Install all dependencies from the requirements file:
+   - Show the active environment name and type (conda/venv/system).
+   - Show the requirements file that will be used.
+   - Ask the user to confirm before proceeding.
    - Python: `pip install -r requirements.txt` (or `pip install -e .` for pyproject.toml).
    - Node: `npm install`.
    - Report any failures.
