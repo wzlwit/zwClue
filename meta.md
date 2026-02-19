@@ -9,7 +9,7 @@ skicmd/
     commit.md
     debug.md
     launch.md
-    planOff.md
+    kickoff.md
     planOn.md
     pr.md
     push.md

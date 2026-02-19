@@ -1,4 +1,4 @@
-# /planOff
+# /kickoff
 
 Implements code from an existing plan file.
 
