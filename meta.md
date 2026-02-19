@@ -11,6 +11,7 @@ skicmd/
     dep.md
     doc.md
     env.md
+    iniClaude.md
     launch.md
     kickoff.md
     planOn.md
