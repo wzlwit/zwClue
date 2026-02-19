@@ -5,15 +5,15 @@ Implements code from an existing plan file.
 ## Parameters
 
 - **$1** (optional): Path to plan file. If omitted, search `./doc/plan/` for the most recent plan file.
-- **$2** (optional): Think level. Default: `Think more`. Options: `Think`, `Think more`, `Think hard`, `Ultrathink`.
+- **$2** (optional): Think level. Default: `think`. Options: `think` (~4K tokens), `megathink` (~10K tokens), `ultrathink` (~32K tokens).
 - **$3** (optional): Model. Default: `Opus`. Options: `Opus`, `Sonnet`, `Haiku`.
 
 ## Usage
 
 ```
-/planOff                                              # use latest plan
-/planOff doc/plan/plan_requirements_2026-02-18.md     # specific plan
-/planOff doc/plan/plan_requirements_2026-02-18.md "Think hard" Sonnet
+/kickoff                                              # use latest plan
+/kickoff doc/plan/plan_requirements_2026-02-18.md     # specific plan
+/kickoff doc/plan/plan_requirements_2026-02-18.md megathink Sonnet
 ```
 
 ## Instructions
@@ -23,7 +23,7 @@ Implements code from an existing plan file.
    b. If multiple matches, sort by date (newest first) and pick the most recent.
    c. If no matches, ask the user to provide the file path or run `/planOn` first.
 
-2. Parse $2 (think level) from the user's input. Default: `Think more`.
+2. Parse $2 (think level) from the user's input. Default: `think`. Implementation is step-by-step execution from an existing plan, so standard think is efficient — escalate to megathink/ultrathink for complex steps.
 
 3. Parse $3 (model) from the user's input. Default: `Opus`.
 

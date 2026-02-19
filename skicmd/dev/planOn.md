@@ -5,16 +5,16 @@ Reads a requirements file and generates an implementation plan.
 ## Parameters
 
 - **$1** (optional): Path to requirements file. If omitted, search `./doc/` for files with "require" in the name.
-- **$2** (optional): Think level. Default: `Think more`. Options: `Think`, `Think more`, `Think hard`, `Ultrathink`.
+- **$2** (optional): Think level. Default: `megathink`. Options: `think` (~4K tokens), `megathink` (~10K tokens), `ultrathink` (~32K tokens).
 - **$3** (optional): Model. Default: `Opus`. Options: `Opus`, `Sonnet`, `Haiku`.
 
 ## Usage
 
 ```
-/planOn                                          # auto-find requirements, Think more, Opus
-/planOn doc/requirements.md                      # specific file
-/planOn doc/requirements.md "Think hard"         # specific file + think level
-/planOn doc/requirements.md "Think hard" Sonnet  # specific file + think level + model
+/planOn                                              # auto-find requirements, megathink, Opus
+/planOn doc/requirements.md                          # specific file
+/planOn doc/requirements.md ultrathink               # specific file + think level
+/planOn doc/requirements.md ultrathink Sonnet        # specific file + think level + model
 ```
 
 ## Instructions
@@ -24,7 +24,7 @@ Reads a requirements file and generates an implementation plan.
    b. If multiple matches, present the list and ask the user to pick one.
    c. If no matches, ask the user to provide the file path.
 
-2. Parse $2 (think level) from the user's input. Default: `Think more`.
+2. Parse $2 (think level) from the user's input. Default: `megathink`. Planning benefits from deeper reasoning, so megathink is the right default — use ultrathink for complex architecture, think for simple plans.
 
 3. Parse $3 (model) from the user's input. Default: `Opus`.
 
