@@ -4,7 +4,7 @@ Reads a requirements file and generates an implementation plan.
 
 ## Parameters
 
-- **$1** (optional): Path to requirements file. If omitted, search `./doc/` for files with "require" in the name.
+- **$1** (optional): Path to requirements file. If omitted, search `./docs/` for files with "require" in the name.
 - **$2** (optional): Think level. Default: `megathink`. Options: `think` (~4K tokens), `megathink` (~10K tokens), `ultrathink` (~32K tokens).
 - **$3** (optional): Model. Default: `Opus`. Options: `Opus`, `Sonnet`, `Haiku`.
 
@@ -12,15 +12,15 @@ Reads a requirements file and generates an implementation plan.
 
 ```
 /planOn                                              # auto-find requirements, megathink, Opus
-/planOn doc/requirements.md                          # specific file
-/planOn doc/requirements.md ultrathink               # specific file + think level
-/planOn doc/requirements.md ultrathink Sonnet        # specific file + think level + model
+/planOn docs/requirements.md                          # specific file
+/planOn docs/requirements.md ultrathink               # specific file + think level
+/planOn docs/requirements.md ultrathink Sonnet        # specific file + think level + model
 ```
 
 ## Instructions
 
 1. Parse $1 from the user's input. If missing:
-   a. Search `./doc/` recursively for files with `require` in the filename (case-insensitive).
+   a. Search `./docs/` recursively for files with `require` in the filename (case-insensitive).
    b. If multiple matches, present the list and ask the user to pick one.
    c. If no matches, ask the user to provide the file path.
 
@@ -42,6 +42,6 @@ Reads a requirements file and generates an implementation plan.
 
 6. Present the plan to the user for review.
 
-7. After user approval (or edits), save the plan to `./doc/plan/` with the filename format: `plan_{original_filename}_{YYYY-MM-DD}.md`.
+7. After user approval (or edits), save the plan to `./docs/plans/` with the filename format: `YYYY-MM-DD-{plan-name}.md` (e.g. `2026-03-04-user-authentication.md`). Derive the plan name from the requirements filename or content, using lowercase kebab-case.
 
 8. Confirm the saved path.

@@ -8,8 +8,8 @@ Initializes a standard folder structure in the current working directory.
 ./src/
 ./tests/
 ./config/
-./doc/
-  plan/
+./docs/
+  plans/
   dev/
 ./scripts/
 ./assets/
@@ -26,9 +26,9 @@ Create the following folder structure in the current working directory:
 - `src/` — source code
 - `tests/` — test files
 - `config/` — configuration files
-- `doc/` — project documentation root
-  - `doc/plan/` — planning documents
-  - `doc/dev/` — development documents
+- `docs/` — project documentation root
+  - `docs/plans/` — planning documents
+  - `docs/dev/` — development documents
 - `scripts/` — build, deploy, and utility scripts
 - `assets/` — static assets (images, fonts, etc.)
 

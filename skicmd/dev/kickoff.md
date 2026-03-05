@@ -4,7 +4,7 @@ Implements code from an existing plan file.
 
 ## Parameters
 
-- **$1** (optional): Path to plan file. If omitted, search `./doc/plan/` for the most recent plan file.
+- **$1** (optional): Path to plan file. If omitted, search `./docs/plans/` for the most recent plan file.
 - **$2** (optional): Think level. Default: `think`. Options: `think` (~4K tokens), `megathink` (~10K tokens), `ultrathink` (~32K tokens).
 - **$3** (optional): Model. Default: `Opus`. Options: `Opus`, `Sonnet`, `Haiku`.
 
@@ -12,14 +12,14 @@ Implements code from an existing plan file.
 
 ```
 /kickoff                                              # use latest plan
-/kickoff doc/plan/plan_requirements_2026-02-18.md     # specific plan
-/kickoff doc/plan/plan_requirements_2026-02-18.md megathink Sonnet
+/kickoff docs/plans/2026-02-18-user-auth.md     # specific plan
+/kickoff docs/plans/2026-02-18-user-auth.md megathink Sonnet
 ```
 
 ## Instructions
 
 1. Parse $1 from the user's input. If missing:
-   a. Search `./doc/plan/` for files with `plan` in the filename.
+   a. Search `./docs/plans/` for files with `plan` in the filename.
    b. If multiple matches, sort by date (newest first) and pick the most recent.
    c. If no matches, ask the user to provide the file path or run `/planOn` first.
 

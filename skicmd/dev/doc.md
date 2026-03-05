@@ -5,13 +5,13 @@ Generates documentation for the current project.
 ## Parameters
 
 - **$1** (optional): Scope — file path, folder, or doc type (`api`, `readme`, `changelog`, `all`). Default: `all`.
-- **$2** (optional): Output folder. Default: `./doc/dev/`.
+- **$2** (optional): Output folder. Default: `./docs/dev/`.
 - **$3** (optional): Model. Default: `Sonnet`. Options: `Opus`, `Sonnet`, `Haiku`.
 
 ## Usage
 
 ```
-/doc                             # generate all docs to ./doc/dev/
+/doc                             # generate all docs to ./docs/dev/
 /doc src/main.py                 # generate docs for a specific file
 /doc src/                        # generate docs for all files in src/
 /doc api                         # generate API documentation
@@ -22,7 +22,7 @@ Generates documentation for the current project.
 
 ## Instructions
 
-1. Parse $1 (scope) and $2 (output folder) from the user's input. Default scope: `all`. Default output: `./doc/dev/`.
+1. Parse $1 (scope) and $2 (output folder) from the user's input. Default scope: `all`. Default output: `./docs/dev/`.
 
 2. Create the output folder if it doesn't exist (`mkdir -p`).
 

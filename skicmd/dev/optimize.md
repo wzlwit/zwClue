@@ -53,7 +53,7 @@ Analyzes and generates an optimization plan for the project or a specific scope.
 
 7. Present the plan to the user for review.
 
-8. After user approval (or edits), save the plan to `./doc/plan/` with the filename format: `opt_{scope}_{YYYY-MM-DD}.md` (use folder/feature name for scope, or `project` for entire project).
+8. After user approval (or edits), save the plan to `./docs/plans/` with the filename format: `YYYY-MM-DD-optimize-{scope}.md` (e.g. `2026-03-04-optimize-authentication.md`). Use `project` for entire project scope, lowercase kebab-case.
 
 9. Confirm the saved path.
 
