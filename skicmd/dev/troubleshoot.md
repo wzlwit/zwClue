@@ -5,6 +5,7 @@ Analyzes errors from recent actions in the current conversation and attempts to 
 ## Parameters
 
 - **$1** (optional): Specific error message or keyword to focus on. If omitted, scan the most recent action/response for errors.
+- **$2** (optional): Model. Default: `Opus`. Options: `Opus`, `Sonnet`, `Haiku`.
 
 ## Usage
 

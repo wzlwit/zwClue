@@ -5,6 +5,7 @@ Generates `CLAUDE.md` files by invoking the `/init` command at the specified lev
 ## Parameters
 
 - **$1** (optional): Level — `root`, `all`, `each`. Default: `all`.
+- **$2** (optional): Model. Default: `Sonnet`. Options: `Opus`, `Sonnet`, `Haiku`.
 
 ## Usage
 

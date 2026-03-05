@@ -5,6 +5,7 @@ Reviews staged and unstaged code changes before committing.
 ## Parameters
 
 - **$1** (optional): Specific file path to review. If omitted, review all changed files.
+- **$2** (optional): Model. Default: `Opus`. Options: `Opus`, `Sonnet`, `Haiku`.
 
 ## Usage
 

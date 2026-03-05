@@ -6,6 +6,7 @@ Generates documentation for the current project.
 
 - **$1** (optional): Scope — file path, folder, or doc type (`api`, `readme`, `changelog`, `all`). Default: `all`.
 - **$2** (optional): Output folder. Default: `./doc/dev/`.
+- **$3** (optional): Model. Default: `Sonnet`. Options: `Opus`, `Sonnet`, `Haiku`.
 
 ## Usage
 

@@ -5,13 +5,14 @@ Analyzes and fixes bugs in a specified file or the currently active editor file.
 ## Parameters
 
 - **$1** (optional): File path to debug. Default: the currently active/open file in the editor.
+- **$2** (optional): Model. Default: `Opus`. Options: `Opus`, `Sonnet`, `Haiku`.
 
 ## Usage
 
 ```
 /debug                           # debug the active file
 /debug src/main.py               # debug a specific file
-/debug src/widgets/my_widget.py  # debug a specific widget
+/debug src/main.py Opus           # debug with Opus for complex bugs
 ```
 
 ## Instructions

@@ -5,6 +5,7 @@ Stages, reviews, and commits changes in one workflow.
 ## Parameters
 
 - **$1** (optional): Commit message. If omitted, auto-generate from the changes.
+- **$2** (optional): Model. Default: `Sonnet`. Options: `Opus`, `Sonnet`, `Haiku`.
 
 ## Usage
 

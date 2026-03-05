@@ -6,6 +6,7 @@ Creates a pull request on GitHub.
 
 - **$1** (optional): Target/base branch. Default: current branch.
 - **$2** (optional): PR title. If omitted, auto-generate from commits.
+- **$3** (optional): Model. Default: `Sonnet`. Options: `Opus`, `Sonnet`, `Haiku`.
 
 ## Usage
 

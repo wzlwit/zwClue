@@ -6,6 +6,7 @@ Runs tests for the current project.
 
 - **$1** (optional): Test scope — file path, test name pattern, or folder. If omitted, run all tests.
 - **$2** (optional): Test framework. Default: auto-detect.
+- **$3** (optional): Model. Default: `Sonnet`. Options: `Opus`, `Sonnet`, `Haiku`.
 
 ## Usage
 
