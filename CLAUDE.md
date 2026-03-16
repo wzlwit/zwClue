@@ -22,6 +22,7 @@ When adding or removing components under `skicmd/`, keep `meta.md` in sync.
 - Starts with `# /commandName` heading
 - Includes `## Instructions` section with self-contained, executable steps
 - Parameters are documented with `$1`, `$2` notation
+- Many commands accept a Model parameter as the last param (`Opus`, `Sonnet`, `Haiku`)
 
 **Skills** (folder): A subfolder containing `SKILL.md` plus supporting files (templates, assets, etc.).
 - `SKILL.md` defines conventions and guidance for ongoing development
@@ -38,3 +39,9 @@ Run `/skicmd` (defined in `.claude/commands/skicmd.md`) to download and install 
 - `/skicmd repos/iniGit https://github.com/user/repo` — install from a custom repo
 
 Components are installed to `.claude/commands/` (project) or `~/.claude/commands/` (global), chosen at install time.
+
+## Conventions
+
+- **Docs folder**: Commands use `./docs/` as the standard documentation root (`docs/plans/` for plans, `docs/dev/` for generated docs).
+- **Plan naming**: Agile convention — `YYYY-MM-DD-{plan-name}.md` in kebab-case (e.g. `2026-03-04-user-authentication.md`).
+- **Model defaults**: Opus for deep reasoning (planOn, kickoff, optimize, refactor, debug, review, troubleshoot). Sonnet for writing/generation (doc, test, commit, iniClaude, pr).

@@ -22,7 +22,7 @@ Browse and install all available components:
 
 | Command | Description |
 |---------|-------------|
-| `/iniFolder` | Scaffold standard folder structure (src, tests, config, doc, scripts, assets) |
+| `/iniFolder` | Scaffold standard folder structure (src, tests, config, docs, scripts, assets) |
 | `/iniGit` | Initialize git repo with .gitignore defaults and initial commit |
 | `/iniPy` | Initialize Python project with conda env, pyproject.toml, and project scaffold |
 
